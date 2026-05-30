@@ -36,7 +36,7 @@ const StatsSection = () => {
     <section className="relative overflow-hidden bg-black text-white">
       
       {/* Background Image */}
-      <div className="absolute inset-0 bg-cover bg-center" style={{backgroundImage: "url('/images/globe.png')"}}>
+      <div className="absolute inset-0 z-0 bg-contain bg-top" style={{backgroundImage: "url('/images/globe.png')"}}>
         
 
         {/* Dark Overlay */}

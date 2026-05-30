@@ -3,10 +3,19 @@ import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@heroui/react";
 import { Bars, Xmark } from "@gravity-ui/icons";
+import { useSession, signOut } from "@/lib/auth-client";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+    const { data: session, isPending } = useSession();
+    console.log(session)
+    const user = session?.user;
+    
+    const handleSignOut = async() => {
+      await signOut()
+    }
+    
     const navLinks = [
         { name: "Browse Jobs", href: "/jobs" },
         { name: "Companies", href: "/companies" },
@@ -46,12 +55,21 @@ const Navbar = () => {
 
                     <div className="h-6 w-px bg-white/10" />
 
-                    <Link
-                        href="/auth/signin"
-                        className="text-sm font-semibold text-violet-400 hover:text-violet-300"
-                    >
-                        Sign In
-                    </Link>
+                    {user ? (
+                        <>
+                            Hi, {user.name}!
+                            <Button onClick={handleSignOut} variant="ghost" className="text-white">
+                                Sign Out
+                            </Button>
+                        </>
+                    ) : (
+                        <Link
+                            href="/auth/signin"
+                            className="text-sm font-semibold text-violet-400 hover:text-violet-300"
+                        >
+                            Sign In
+                        </Link>
+                    )}
 
                     <Link href="/auth/signup">
                         <Button
@@ -87,13 +105,21 @@ const Navbar = () => {
                             </Link>
                         ))}
 
+                        {user ? (
+                        <>
+                            Hi, {user.name}!
+                            <Button onClick={handleSignOut} variant="ghost" className="text-white">
+                                Sign Out
+                            </Button>
+                        </>
+                    ) : (
                         <Link
                             href="/auth/signin"
-                            className="font-medium text-violet-400"
-                            onClick={() => setIsMenuOpen(false)}
+                            className="text-sm font-semibold text-violet-400 hover:text-violet-300"
                         >
                             Sign In
                         </Link>
+                    )}
 
                         <Link href="/auth/signup">
                             <Button
