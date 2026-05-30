@@ -7,12 +7,15 @@ import { Button } from "@heroui/react";
 import { Input, Label, InputGroup, TextField } from "@heroui/react";
 import { Card } from "@heroui/react";
 import { authClient } from "@/lib/auth-client";
+import { useRouter } from "next/navigation";
 
 const SignupPage = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
+  
+  const router = useRouter();
   
   const toggleVisibility = () => setIsVisible(!isVisible);
   
@@ -43,8 +46,8 @@ const SignupPage = () => {
 
         form.reset();
 
-        // Optional redirect after signup
-        // router.push("/login");
+        // Redirect after signup
+         router.push("/auth/signin");
       }
     } catch (err) {
       setError("Something went wrong. Please try again.");
@@ -59,7 +62,7 @@ const SignupPage = () => {
         
           {/* Back Button */}
           <Link
-            href="/login"
+            href="/auth/signin"
             className="flex items-center gap-2 text-sm text-gray-500 hover:text-purple-500 transition mb-6"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -69,7 +72,7 @@ const SignupPage = () => {
           {/* Heading */}
           <div className="mb-8">
             <h1 className="text-3xl font-bold text-gray-300">
-              Create Account
+              Create An Account
             </h1>
 
             <p className="text-gray-500 mt-2">
@@ -167,7 +170,7 @@ const SignupPage = () => {
           <p className="text-center text-sm text-gray-600 mt-6">
             Already have an account?{" "}
             <Link
-              href="/login"
+              href="/auth/signin"
               className="text-primary font-medium hover:underline"
             >
               Sign In

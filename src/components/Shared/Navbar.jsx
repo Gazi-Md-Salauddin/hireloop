@@ -10,8 +10,7 @@ const Navbar = () => {
     const navLinks = [
         { name: "Browse Jobs", href: "/jobs" },
         { name: "Companies", href: "/companies" },
-        { name: "Pricing", href: "/pricing" },
-        // { name: "Dashboard", href: "/dashboard" }
+        { name: "Pricing", href: "/pricing" }
     ];
 
     return (
@@ -48,20 +47,20 @@ const Navbar = () => {
                     <div className="h-6 w-px bg-white/10" />
 
                     <Link
-                        href="/login"
+                        href="/auth/signin"
                         className="text-sm font-semibold text-violet-400 hover:text-violet-300"
                     >
                         Sign In
                     </Link>
 
-                    <Button
-                        as={Link}
-                        href="/register"
-                        radius="full"
-                        className="bg-white px-6 font-semibold text-black hover:bg-gray-200"
-                    >
-                        Get Started
-                    </Button>
+                    <Link href="/auth/signup">
+                        <Button
+                            radius="full"
+                            className="bg-white px-6 font-semibold text-black hover:bg-gray-200"
+                        >
+                            Get Started
+                        </Button>
+                    </Link>
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -89,21 +88,21 @@ const Navbar = () => {
                         ))}
 
                         <Link
-                            href="/login"
+                            href="/auth/signin"
                             className="font-medium text-violet-400"
                             onClick={() => setIsMenuOpen(false)}
                         >
                             Sign In
                         </Link>
 
-                        <Button
-                            as={Link}
-                            href="/register"
-                            radius="full"
-                            className="bg-white font-semibold text-black"
-                        >
-                            Get Started
-                        </Button>
+                        <Link href="/auth/signup">
+                            <Button
+                                radius="full"
+                                className="bg-white font-semibold text-black"
+                            >
+                                Get Started
+                            </Button>
+                        </Link>
                     </div>
                 </div>
             )}

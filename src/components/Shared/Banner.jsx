@@ -11,13 +11,8 @@ import { Button, Input, Chip } from "@heroui/react";
 const Banner = () => {
   return (
     <section
-      className="relative overflow-hidden bg-black text-white"
-      style={{
-        backgroundImage:
-          "url('https://images.unsplash.com/photo-1539721972319-f0e80a00d424?q=80&w=2070&auto=format&fit=crop')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+      className="relative overflow-hidden bg-black/90 text-white"
+      
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/75" />
@@ -96,7 +91,7 @@ const Banner = () => {
           <Button
             isIconOnly
             radius="full"
-            className="h-14 w-full md:w-18 bg-violet-600 text-white hover:bg-violet-500"
+            className="h-14 w-full md:w-20 bg-violet-600 text-white hover:bg-violet-500"
           > 
             <Magnifier width={26} height={26} />
           Search
