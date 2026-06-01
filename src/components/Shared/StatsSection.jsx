@@ -36,22 +36,22 @@ const StatsSection = () => {
     <section className="relative overflow-hidden bg-black text-white">
       
       {/* Background Image */}
-      <div className="absolute inset-0 z-0 bg-contain bg-top" style={{backgroundImage: "url('/images/globe.png')"}}>
+      <div className="absolute inset-0 z-0 bg-cover bg-no-repeat bg-top" style={{backgroundImage: "url('/images/globe.png')"}}>
         
 
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/60" />
 
         {/* Purple Glow */}
-        <div className="absolute left-1/2 top-26 h-[400px] w-[400px] -translate-x-1/2 rounded-full bg-violet-700/40 blur-[120px]" />
+        <div className="absolute left-1/2 top-26 h-[400px] w-[400px] -translate-x-1/2 rounded-full blur-[120px]" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center justify-center px-4 py-24 text-center">
 
         {/* Heading */}
-        <div className="max-w-4xl">
-          <h1 className="text-4xl font-bold leading-tight md:text-6xl">
+        <div className="max-w-4xl mt-114">
+          <h1 className="text-4xl font-bold leading-tight md:text-5xl">
             Assisting over{" "}
             <span className="text-violet-400">
               15,000 job seekers
