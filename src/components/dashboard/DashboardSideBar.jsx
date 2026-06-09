@@ -2,21 +2,21 @@
 
 import {
     Bars,
-    Bell,
-    Envelope,
+    Briefcase,
+    FileText,
     Gear,
-    House,
-    Magnifier,
+    Circles4Square,
+    Factory,
     Person
 } from "@gravity-ui/icons";
 import { Button, Drawer } from "@heroui/react";
 
 const DashboardSideBar = () => {
     const navItems = [
-        { icon: House, label: "Home" },
-        { icon: Magnifier, label: "Search" },
-        { icon: Bell, label: "Notifications" },
-        { icon: Envelope, label: "Messages" },
+        { icon: Circles4Square, label: "Dashboard" },
+        { icon: Factory, label: "My Company" },
+        { icon: Briefcase, label: "Manage Jobs" },
+        { icon: FileText, label: "Applications" },
         { icon: Person, label: "Profile" },
         { icon: Gear, label: "Settings" }
     ];
