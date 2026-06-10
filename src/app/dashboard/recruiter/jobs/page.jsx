@@ -1,5 +1,10 @@
+"use client"
 import React from 'react'
 import { getCompanyJobs } from '@/lib/api/jobs';
+import { Table, Chip, Button, Tooltip } from "@heroui/react";
+// Assuming Gravity Icons maps to standard lucide equivalents; adjust paths if using a custom package
+import { Eye, Edit2, Trash2 } from "lucide-react"; 
+
 
 const RecruiterJobPage = async() => {
   const companyId = 'company_123'; 
