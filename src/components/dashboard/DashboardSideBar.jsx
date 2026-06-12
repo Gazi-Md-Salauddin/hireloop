@@ -14,12 +14,12 @@ import Link from 'next/link'
 
 const DashboardSideBar = () => {
     const navItems = [
-        { icon: Circles4Square, href: "/dashboard/recruiter" label: "Dashboard" },
-        { icon: Factory, href: "dashboard/recruiter/jobs" label: "Jobs" },
-        { icon: Briefcase, href: "dashboard/recruiter/jobs/new" label: "Create A Job" },
-        { icon: FileText, href: "dashboard/recruiter/company" label: "Company Profile" },
-        { icon: Person, label: "Profile" },
-        { icon: Gear, label: "Settings" }
+        { icon: Circles4Square, href: "/dashboard/recruiter", label: "Dashboard" },
+        { icon: Factory, href: "/dashboard/recruiter/jobs", label: "Jobs" },
+        { icon: Briefcase, href: "/dashboard/recruiter/jobs/new", label: "Create A Job" },
+        { icon: FileText, href: "/dashboard/recruiter/company", label: "Company Profile" },
+        { icon: Person, href: "/dashboard/recruiter/profile", label: "Profile" },
+        { icon: Gear, href: "/dashboard/recruiter/settings", label: "Settings" }
     ];
 
     const navContent = (
