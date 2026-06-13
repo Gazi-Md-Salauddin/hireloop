@@ -8,7 +8,7 @@ const RecruiterDashboardPage = () => {
   
   const {data: session, isPending} = useSession()
   if(isPending) {
-    return <div>Loading...</div>
+    return <div className="text-center flex justify-center">Loading...</div>
   }
   const recruiterStats = [
         { title: "Total Job Posts", value: "48", icon: Briefcase },
