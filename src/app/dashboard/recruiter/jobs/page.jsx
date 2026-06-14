@@ -4,8 +4,8 @@ import RecruiterJob from "@/components/dashboard/RecruiterJob";
 import { getLoggedInRecruiterCompany } from '@/lib/api/companies';
 
 const RecruiterJobPage = async () => {
-    const companyId = "company_123";
-    const jobs = await getCompanyJobs(companyId) || [];
+    const company = await getLoggedInRecruiterCompany()
+    const jobs = await getCompanyJobs(company._id) || [];
 
     return (
         <div className="p-6 max-w-7xl mx-auto space-y-4">

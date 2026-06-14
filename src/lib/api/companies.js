@@ -4,10 +4,9 @@ import { getUserSession } from "../core/session";
 export const getRecruiterCompany = async (recruiterId) => {
     return serverFetch(`/api/my/companies?recruiterId=${recruiterId}`);
 }
-console.log(getRecruiterCompany)
+
 
 export const getLoggedInRecruiterCompany = async () => {
     const user = await getUserSession();
     return getRecruiterCompany(user?.id);
 }
-  console.log(getRecruiterCompany)

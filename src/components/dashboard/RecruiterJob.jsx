@@ -4,7 +4,7 @@ import { Table, Chip, Button, Tooltip } from "@heroui/react";
 // Assuming Gravity Icons maps to standard lucide equivalents; adjust paths if using a custom package
 import { Eye, Edit2, Trash2 } from "lucide-react";
 
-const RecruiterJob = ({ jobs, }) => {
+const RecruiterJob = ({ jobs }) => {
   // Helper to determine status chip coloring
     const getStatusColor = status => {
         switch (status?.toLowerCase()) {
@@ -66,7 +66,7 @@ const RecruiterJob = ({ jobs, }) => {
                     <Table.Body
                         emptyContent={"No jobs found for this company."}
                     >
-                        {jobs.map(job => (
+                        {jobs.map((job) => (
                             <Table.Row key={job._id?.$oid || job._id}>
                                 {/* Job Title */}
                                 <Table.Cell>

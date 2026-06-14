@@ -131,7 +131,7 @@ const Footer = () => {
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-6 text-sm text-gray-500 md:flex-row">
 
           <p>
-            Copyright © 2026 HireHub. All rights reserved.
+            Copyright © 2026 HireLoop. All rights reserved.
           </p>
 
           <div className="flex items-center gap-5">
