@@ -22,6 +22,21 @@ const Navbar = () => {
         { name: "Pricing", href: "/pricing" }
     ];
 
+  const dashboardLinks = {
+    seeker: '/dashboard/seeker',
+    recruiter: '/dashboard/recruiter',
+    admin: '/dashboard/admin'
+  }
+
+  if (user?.email) {
+    navLinks.push(
+      {
+        name: 'Dashboard',
+        href: dashboardLinks[user?.role || 'seeker']
+      }
+    )
+  }
+
     return (
         <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/70 backdrop-blur-lg">
             <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
@@ -45,7 +60,7 @@ const Navbar = () => {
                 <div className="hidden items-center gap-8 rounded-full border border-white/10 bg-white/5 px-6 py-3 backdrop-blur-md md:flex">
                     {navLinks.map(link => (
                         <Link
-                            key={link.name}
+                            
                             href={link.href}
                             className="text-sm font-medium text-gray-300 transition hover:text-violet-400"
                         >

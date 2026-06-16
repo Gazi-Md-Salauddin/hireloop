@@ -41,12 +41,15 @@ const SignupPage = () => {
         const email = form.email.value;
         const password = form.password.value;
 
+        const plan = role === 'seeker' ? 'seeker_free' : 'recruiter_free';
+      
         try {
             const result = await authClient.signUp.email({
                 email,
                 password,
                 name,
-                role
+                role,
+                plan
             });
 
             if (result?.error) {
