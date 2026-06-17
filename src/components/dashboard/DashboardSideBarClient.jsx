@@ -13,8 +13,8 @@ import {
     House,
     Bookmark,
     CreditCard,
-    Users,
-    Building,
+    Persons,
+    
     
 } from "@gravity-ui/icons";
 import { Button, Drawer } from "@heroui/react";
@@ -43,8 +43,8 @@ const DashboardSideBarClient = ({user}) => {
 
   const adminNavLinks = [
         { icon: House, href: "/dashboard/admin", label: "Dashboard" },
-        { icon: Users, href: "/dashboard/admin/users", label: "Users" },
-        { icon: Building, href: "/dashboard/admin/companies", label: "Companies" },
+        { icon: Persons, href: "/dashboard/admin/users", label: "Users" },
+        { icon: Factory, href: "/dashboard/admin/companies", label: "Companies" },
         { icon: Briefcase, href: "/dashboard/admin/jobs", label: "Jobs" },
         { icon: CreditCard, href: "/dashboard/admin/payments", label: "Payments" },
         { icon: Gear, href: "/dashboard/admin/settings", label: "Settings" },
